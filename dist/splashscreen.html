@@ -13,17 +13,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: orangered;
+      color: #fff;
     }
   </style>
   <body>
     <h1>loading bullshit...</h1>
   </body>
   <script>
-    const invoke = window.__TAURI__.invoke;
-    document.addEventListener("DOMContentLoaded", () => {
-      // This will wait for the window to load, but you could
-      // run this function on whatever trigger you want
-      invoke("close_splashscreen");
+    const invoke = window.__TAURI__._invoke;
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        invoke("close_splashscreen");
+      }, 3000);
     });
   </script>
 </html>
