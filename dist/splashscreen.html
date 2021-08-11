@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <h1>loading bullshit...</h1>
+  </body>
+  <script>
+    const invoke = window.__TAURI__.invoke;
+    document.addEventListener("DOMContentLoaded", () => {
+      // This will wait for the window to load, but you could
+      // run this function on whatever trigger you want
+      invoke("close_splashscreen");
+    });
+  </script>
+</html>
